@@ -1,38 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_WinForms_Grupo_1B.Modelos
+namespace dominio
 {
     public class Articulo
     {
-        //public Articulo(int codigo,
-        //                string nombre,
-        //                string descripcion,
-        //                string marca,
-        //                string categoria,
-        //                string imagen,
-        //                decimal precio)
-        //{
-        //    Codigo = codigo;
-        //    Nombre = nombre;
-        //    Descripcion = descripcion;
-        //    Marca = marca;
-        //    Categoria = categoria;
-        //    Imagen = imagen;
-        //    Precio = precio;
-        //}
-        public Articulo() { }
+        public int posVec { get; set; }
+        public List<string> Imagenes;
         public int Id { get; set; }
-        public string Nombre { get; set; }
+        [DisplayName("Código")]
         public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        [DisplayName("Descripción")]
         public string Descripcion { get; set; }
-        public Elemento Marca { get; set; }
-        public Elemento Categoria { get; set; }
-        public string Imagen { get; set; } 
+
+        public Marca Marca { get; set; }
+        [DisplayName("Categoría")]
+        public Categoria Categoria { get; set; }
+        public string Imagen { get; set; }
+
         public decimal Precio { get; set; }
-       
+
+        public Articulo()
+        {
+            posVec = 0;
+        }
+
     }
+
+    
 }

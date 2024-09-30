@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Drawing;
 
-namespace TP_WinForms_Grupo_1B
+namespace negocio
 {
     public class AccesoDatos
     {
@@ -20,16 +19,11 @@ namespace TP_WinForms_Grupo_1B
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=DESKTOP-758I0CH\\ZOOLOGIC; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
         public void setearConsulta(string consulta)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = consulta;
-        }
-        public void setearConsulta(string consulta, string consul, string consul2)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
@@ -42,11 +36,9 @@ namespace TP_WinForms_Grupo_1B
             {
                 conexion.Open();
                 lector = comando.ExecuteReader();
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -56,15 +48,12 @@ namespace TP_WinForms_Grupo_1B
             comando.Connection = conexion;
             try
             {
-
                 conexion.Open();
                 comando.ExecuteNonQuery();
-
             }
-            catch (Exception)
+            catch(Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -72,14 +61,11 @@ namespace TP_WinForms_Grupo_1B
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-
         public void cerrarConexion()
         {
             if (lector != null)
-            {
                 lector.Close();
-                conexion.Close();
-            }
+            conexion.Close();
         }
     }
 }
