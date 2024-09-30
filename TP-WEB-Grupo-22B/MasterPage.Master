@@ -48,6 +48,9 @@
                                 <a class="nav-link" href="#">Ver Premios</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="Formulario.aspx">Formulario</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">Creditos</a>
                             </li>
                         </ul>

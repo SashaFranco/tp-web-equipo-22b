@@ -1,0 +1,63 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+
+}
+
+.form-container1 {
+    display: flex;
+}
+
+.form-container2 {
+    display: flex;
+}
+
+
+.div-Dni {
+    width: 33%;
+    padding-right: 1rem;
+
+}
+
+
+.div-Nombre {
+    width: 33%;
+    padding-right: 1rem;
+}
+
+.div-Apellido {
+    width: 33%;
+    padding-right: 1rem;
+}
+
+.div-Email {
+    width: 34%;
+    padding-right: 1rem;
+}
+
+.div-Direccion {
+    width: 50%;
+}
+
+.div-Ciudad {
+    width: 25%;
+}
+
+.div-CP {
+    width: 25%;
+}
+
+.input-group {
+    min-width: 100%;
+    padding: 0;
+}
+
+.form-container2 .mb-3 {
+    padding-right: 1rem;
+}
+
+
+
+body {
+}
