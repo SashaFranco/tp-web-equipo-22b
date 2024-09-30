@@ -45,7 +45,7 @@
                                 <a class="nav-link active" aria-current="page" href="CanjearCodigo.aspx">Canjear Codigo</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Ver Premios</a>
+                                <a class="nav-link" href="ElegirPremio.aspx">Ver Premios</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Formulario.aspx">Formulario</a>
