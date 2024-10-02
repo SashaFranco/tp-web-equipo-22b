@@ -16,7 +16,7 @@ namespace TP_WEB_Grupo_22B
 
         protected void btnVoucher_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("CanjearCodigo.aspx");
         }
     }
 }

@@ -18,6 +18,16 @@ namespace TP_WEB_Grupo_22B
         protected void Button1_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
+            ClienteNegocio auxNegocio = new ClienteNegocio();
+            string dni = txtDni.Text;
+
+            Cliente aux = auxNegocio.BuscarPorDni(dni);
+
+            if (aux != null && aux.Dni != "0")
+            {
+                Response.Write("<script>alert('El DNI ya está registrado. No se puede agregar nuevamente.');</script>");
+                return;
+            }
 
             cliente.Dni = txtDni.Text;
             cliente.Nombre = txtNombre.Text;
@@ -29,19 +39,12 @@ namespace TP_WEB_Grupo_22B
 
             if (cliente.CP < 0)
             {
-
                 return;
             }
 
             ClienteNegocio clienteNegocio = new ClienteNegocio();
-
-
             clienteNegocio.agregar(cliente);
-
-
         }
-
-
 
         protected void txtDni_TextChanged(object sender, EventArgs e)
         {
