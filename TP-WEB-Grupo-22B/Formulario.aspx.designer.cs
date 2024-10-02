@@ -78,12 +78,12 @@ namespace TP_WEB_Grupo_22B
         protected global::System.Web.UI.WebControls.TextBox txtCP;
 
         /// <summary>
-        /// Control Button1.
+        /// Control btnParticipar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnParticipar;
     }
 }

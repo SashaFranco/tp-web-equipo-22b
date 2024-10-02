@@ -100,6 +100,7 @@ namespace negocio
                     if (!(datos.Lector["Marca"] is DBNull))
                         aux.Marca.Nombre = (string)datos.Lector["Marca"];
 
+                    aux.Imagenes = cargarVecImagenes(aux.Id);
                     lista.Add(aux);
 
                 }
@@ -258,8 +259,6 @@ namespace negocio
                 {
                     if (!((datos.Lector["ImagenUrl"] is DBNull)) && (Id == (int)datos.Lector["IdArticulo"]))
                         lista.Add((string)datos.Lector["ImagenUrl"]);
-
-
                 }
 
                 return lista;

@@ -48,11 +48,6 @@ namespace negocio
             return esValido;
         }
 
-
-
-
-
-
         public List<Vouchers> Listar()
         {
             List<Vouchers> lista = new List<Vouchers>();
@@ -90,9 +85,6 @@ namespace negocio
                     //    fechaCanje = datos.Lector["fechaCanje"] != DBNull.Value ? Convert.ToDateTime(datos.Lector["fechaCanje"]) : DateTime.MinValue,
                     //    articulo = datos.Lector["idArticulo"] != DBNull.Value ? new Articulo { Id = Convert.ToInt32(datos.Lector["idArticulo"]) } : null
                     //};
-
-                    
-
 
                 }
             }

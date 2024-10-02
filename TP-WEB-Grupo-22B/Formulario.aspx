@@ -39,9 +39,6 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="form-container2">
                     <div class="mb-3 div-Direccion">
                         <label for="txtDireccion" class="form-label">Direccion</label>
@@ -67,7 +64,7 @@
                         </label>
                     </div>
                 </div>
-                <asp:Button ID="Button1" OnClick="Button1_Click" CssClass="btn btn-primary" runat="server" Text="Participar!" />
+                <asp:Button ID="btnParticipar" OnClick="Button1_Click" CssClass="btn btn-primary" runat="server" Text="Participar!" />
 
 
             </div>

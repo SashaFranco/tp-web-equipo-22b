@@ -28,6 +28,7 @@ namespace dominio
         public Articulo()
         {
             posVec = 0;
+            //Imagenes = new List<string>();
         }
     } 
 }
