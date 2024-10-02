@@ -9,6 +9,50 @@ namespace negocio
 {
     public class VoucherNegocio
     {
+
+        public bool ValidarVoucherNoUtilizado(string codigoVoucher)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            bool esValido = false;
+
+            try
+            {
+                // Consulta para verificar si el voucher ya está registrado en la tabla
+                datos.setearConsulta("SELECT CodigoVoucher,FechaCanje FROM Vouchers WHERE CodigoVoucher = @CodigoVoucher");
+                datos.setearParametro("@CodigoVoucher", codigoVoucher);
+
+                datos.ejecutarLectura();
+
+                // Si no hay registros, significa que el voucher no ha sido utilizado
+                if (datos.Lector.Read())
+                {
+                    if (datos.Lector["FechaCanje"] is DBNull)
+                    {
+                    return esValido = true;
+
+                    }
+
+                }
+
+                return esValido;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return esValido;
+        }
+
+
+
+
+
+
         public List<Vouchers> Listar()
         {
             List<Vouchers> lista = new List<Vouchers>();

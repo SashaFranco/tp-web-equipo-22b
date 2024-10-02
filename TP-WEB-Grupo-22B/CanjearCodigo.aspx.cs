@@ -17,7 +17,8 @@ namespace TP_WEB_Grupo_22B
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
         {
-            string codigoVoucher = Request.Form["exampleFormControlInput1"];
+            //string codigoVoucher = Request.Form["exampleFormControlInput1"]; 
+            string codigoVoucher = exampleFormControlInput1.Text;
 
             if (string.IsNullOrEmpty(codigoVoucher))
             {
@@ -25,9 +26,11 @@ namespace TP_WEB_Grupo_22B
                 Response.Write("<script>alert('Por favor, ingrese un código de voucher válido.');</script>");
                 return;
             }
+            
+            VoucherNegocio voucherNegocio = new VoucherNegocio();
 
             // Validar el voucher
-            if (ValidarVoucherNoUtilizado(codigoVoucher))
+            if (voucherNegocio.ValidarVoucherNoUtilizado(codigoVoucher))
             {
                 // Redirigir a la página de elegir premio si el voucher no ha sido utilizado
                 Response.Redirect("ElegirPremio.aspx");
@@ -39,36 +42,6 @@ namespace TP_WEB_Grupo_22B
             }
         }
 
-        private bool ValidarVoucherNoUtilizado(string codigoVoucher)
-        {
-            AccesoDatos datos = new AccesoDatos();
-            bool esValido = false;
-
-            try
-            {
-                // Consulta para verificar si el voucher ya está registrado en la tabla
-                datos.setearConsulta("SELECT CodigoVoucher FROM Vouchers WHERE CodigoVoucher = @CodigoVoucher");
-                datos.setearParametro("@CodigoVoucher", codigoVoucher);
-
-                datos.ejecutarLectura();
-
-                // Si no hay registros, significa que el voucher no ha sido utilizado
-                if (!datos.Lector.HasRows)
-                {
-                    esValido = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Manejo de errores
-                Response.Write("<script>alert('Error en la validación del voucher: " + ex.Message + "');</script>");
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-
-            return esValido;
-        }
+        
     }
 }

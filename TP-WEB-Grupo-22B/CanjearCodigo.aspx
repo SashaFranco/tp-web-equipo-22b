@@ -9,7 +9,8 @@
         <div class="col">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Ingresa el código del voucher!</label>
-                <input class="form-control" id="exampleFormControlInput1" placeholder="XXXXXXXX">
+                <asp:TextBox CssClass="form-control" ID="exampleFormControlInput1" placeholder="XXXXXXXX" runat="server" />
+                
             </div>
             <div class="col-auto">
                 <asp:Button Text="Siguiente" CssClass="btn btn-primary mb-3" ID ="btnSiguiente" OnClick ="btnSiguiente_Click" runat="server"/>
