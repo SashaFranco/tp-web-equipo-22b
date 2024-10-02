@@ -29,8 +29,5 @@ namespace dominio
         {
             posVec = 0;
         }
-
-    }
-
-    
+    } 
 }

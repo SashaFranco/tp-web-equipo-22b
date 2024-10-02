@@ -63,8 +63,6 @@ namespace TP_WEB_Grupo_22B
                     txtCiudad.Text = cliente.Ciudad;
                     txtDireccion.Text = cliente.Direccion;
                     txtCP.Text = cliente.CP.ToString();
-
-
                 }
 
             }

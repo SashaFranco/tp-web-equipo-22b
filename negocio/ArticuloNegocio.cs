@@ -48,7 +48,6 @@ namespace negocio
                         aux.Marca.Nombre = (string)datos.Lector["Marca"];
 
                     lista.Add(aux);
-
                 }
 
                 return lista;
