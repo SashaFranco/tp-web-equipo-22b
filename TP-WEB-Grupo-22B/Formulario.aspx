@@ -58,7 +58,9 @@
 
                 <div class="mb-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="Check">
+                        <%--<input class="form-check-input" type="checkbox" id="CheckTermCond">--%>
+                        <asp:CheckBox ID="CheckTermCond" class="form-check-input" runat="server" />
+                        
                         <label class="form-check-label" for="Check">
                             Acepto los terminos y condiciones.
                         </label>

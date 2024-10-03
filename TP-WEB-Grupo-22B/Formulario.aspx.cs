@@ -38,11 +38,42 @@ namespace TP_WEB_Grupo_22B
 
         }
 
+        private bool campoVacio(string campo)
+        {
+            if(campo == "")
+            {
+                return true;
+            }
+
+            return false;
+        }
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
+            int idArticulo = int.Parse(Request.QueryString["id"]);
+            string mensajeError = "";
+
+            //validar que todos los campos estén completos
+            if(campoVacio(txtDni.Text) || campoVacio(txtNombre.Text) || campoVacio(txtApellido.Text) || campoVacio(txtEmail.Text) || campoVacio(txtDireccion.Text) || campoVacio(txtCiudad.Text) || campoVacio(txtCP.Text) )
+            {
+                mensajeError += "Debe cargar todos los campos para participar. ";
+            }
+
+
+            if(!(CheckTermCond.Checked)) 
+                {
+                mensajeError += "Debe aceptar los terminos y condiciones.";
+                }
+
+            if(mensajeError != "")
+            {
+                Response.Write("<script>alert('" + mensajeError + "');</script>");
+                return;
+            }
+
+            
+
             string dni = txtDni.Text;
             ClienteNegocio auxNegocio = new ClienteNegocio();
             Cliente aux = auxNegocio.BuscarPorDni(dni);
@@ -66,7 +97,7 @@ namespace TP_WEB_Grupo_22B
             //IdCliente, Codigo de vaucher, fecha de hoy, ID de articulo
 
             string codigoVoucher = Session["codigoVoucher"].ToString();
-            int idArticulo = int.Parse(Request.QueryString["id"]);
+            //int idArticulo = int.Parse(Request.QueryString["id"]);
 
             VoucherNegocio vnegocio = new VoucherNegocio();
             vnegocio.canjearVoucher(codigoVoucher, IdCliente, idArticulo);
