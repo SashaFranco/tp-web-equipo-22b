@@ -110,6 +110,28 @@ namespace negocio
 
         }
 
+        public int buscarId(string documento)
+        {
+            try
+            {
+               AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("SELECT Id from Clientes where Documento = @documento");
+                datos.setearParametro("@documento", documento);
+                datos.ejecutarLectura();
+
+                datos.Lector.Read();
+                int doc = (int)datos.Lector["Id"];
+                return doc; 
+                    
+                    }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
 
 
 

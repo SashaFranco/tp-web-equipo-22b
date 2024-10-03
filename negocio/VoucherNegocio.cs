@@ -45,7 +45,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
 
-            return esValido;
+            
         }
 
         public List<Vouchers> Listar()

@@ -15,20 +15,11 @@ namespace TP_WEB_Grupo_22B
         {
 
         }
-        protected void Button1_Click(object sender, EventArgs e)
+
+
+        public void agregarCliente()
         {
             Cliente cliente = new Cliente();
-            ClienteNegocio auxNegocio = new ClienteNegocio();
-            string dni = txtDni.Text;
-
-            Cliente aux = auxNegocio.BuscarPorDni(dni);
-
-            if (aux != null && aux.Dni != "0")
-            {
-                Response.Write("<script>alert('El DNI ya está registrado. No se puede agregar nuevamente.');</script>");
-                return;
-            }
-
             cliente.Dni = txtDni.Text;
             cliente.Nombre = txtNombre.Text;
             cliente.Apellido = txtApellido.Text;
@@ -44,6 +35,35 @@ namespace TP_WEB_Grupo_22B
 
             ClienteNegocio clienteNegocio = new ClienteNegocio();
             clienteNegocio.agregar(cliente);
+
+        }
+
+
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+           
+            string dni = txtDni.Text;
+            ClienteNegocio auxNegocio = new ClienteNegocio();
+            Cliente aux = auxNegocio.BuscarPorDni(dni);
+
+            int IdCliente;
+           
+
+            if (aux != null && aux.Dni != "0")
+            {
+                IdCliente = auxNegocio.buscarId(dni);
+                Response.Write("<script>alert('no se cargo , el id es: " + IdCliente + "');</script>");
+            }
+            else
+            {
+                agregarCliente();
+                IdCliente = auxNegocio.buscarId(dni);  //ID DEL CLIENTE CARGADO
+                Response.Write("<script>alert('se cargo y el id es:" + IdCliente + "');</script>");
+
+            }
+
+
         }
 
         protected void txtDni_TextChanged(object sender, EventArgs e)
