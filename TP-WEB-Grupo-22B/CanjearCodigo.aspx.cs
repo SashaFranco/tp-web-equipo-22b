@@ -33,6 +33,7 @@ namespace TP_WEB_Grupo_22B
             if (voucherNegocio.ValidarVoucherNoUtilizado(codigoVoucher))
             {
                 // Redirigir a la página de elegir premio si el voucher no ha sido utilizado
+                Session["codigoVoucher"] = codigoVoucher;
                 Response.Redirect("ElegirPremio.aspx");
             }
             else
@@ -40,8 +41,6 @@ namespace TP_WEB_Grupo_22B
                 // Mostrar mensaje de error si el voucher ya fue utilizado
                 Response.Write("<script>alert('El código de voucher ya ha sido utilizado.');</script>");
             }
-        }
-
-        
+        }     
     }
 }
