@@ -63,7 +63,15 @@ namespace TP_WEB_Grupo_22B
 
             }
 
+            //IdCliente, Codigo de vaucher, fecha de hoy, ID de articulo
 
+            string codigoVoucher = Session["codigoVoucher"].ToString();
+            int idArticulo = int.Parse(Request.QueryString["id"]);
+
+            VoucherNegocio vnegocio = new VoucherNegocio();
+            vnegocio.canjearVoucher(codigoVoucher, IdCliente, idArticulo);
+
+            Response.Redirect("partExitosa.aspx");
         }
 
         protected void txtDni_TextChanged(object sender, EventArgs e)

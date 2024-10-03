@@ -19,8 +19,8 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=PROMOS_DB; integrated security=true");
-            //conexion = new SqlConnection("server=DESKTOP-M41PHTC\\SQLEXPRESS01; database=PROMOS_DB; integrated security=true");
+            //conexion = new SqlConnection("server=.\\SQLEXPRESS; database=PROMOS_DB; integrated security=true");
+            conexion = new SqlConnection("server=DESKTOP-758I0CH\\ZOOLOGIC; database=PROMOS_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -58,7 +58,7 @@ namespace negocio
                 conexion.Open();
                 comando.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }

@@ -3,3 +3,11 @@ SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, C.Descripcion AS Categ
 WHERE IdArticulo = A.Id) AS ImagenUrl, A.IdMarca, A.IdCategoria FROM ARTICULOS A 
 INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria 
 INNER JOIN MARCAS M ON M.Id = A.IdMarca
+
+create procedure storedCanjearVoucher
+@IdCliente int,
+@IdArticulo int,
+@CodigoVoucher varchar(50)
+as
+update Vouchers
+set IdCliente = @IdCliente, FechaCanje = getdate(), idArticulo = @IdArticulo where CodigoVoucher = @CodigoVoucher

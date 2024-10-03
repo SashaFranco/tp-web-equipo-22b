@@ -35,6 +35,7 @@ namespace TP_WEB_Grupo_22B
                 // Redirigir a la página de elegir premio si el voucher no ha sido utilizado
                 Session["codigoVoucher"] = codigoVoucher;
                 Response.Redirect("ElegirPremio.aspx");
+                Session.Add("codigoVoucher", codigoVoucher);
             }
             else
             {

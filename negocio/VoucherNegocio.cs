@@ -48,6 +48,28 @@ namespace negocio
             
         }
 
+        public void canjearVoucher(string codVoucher, int idCliente, int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Vouchers voucher = new Vouchers();
+
+            try
+            {
+                datos.setearProcedimiento("storedCanjearVoucher");
+                datos.setearParametro("@CodigoVoucher", codVoucher);
+                datos.setearParametro("@IdArticulo", idArticulo);
+                datos.setearParametro("@IdCliente", idCliente);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public List<Vouchers> Listar()
         {
             List<Vouchers> lista = new List<Vouchers>();
@@ -99,27 +121,7 @@ namespace negocio
 
             return voucher;
         }
-        public void CanjearVoucher(string codigoVoucher, Cliente cliente, Articulo articulo)
-        {
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.setearConsulta("UPDATE Vouchers SET idCliente = @idCliente, fechaCanje = @fechaCanje, idArticulo = @idArticulo WHERE codigoVoucher = @codigoVoucher");
-                datos.setearParametro("@idCliente", cliente.Dni);
-                datos.setearParametro("@fechaCanje", DateTime.Now);
-                datos.setearParametro("@idArticulo", articulo.Id);
-                datos.setearParametro("@codigoVoucher", codigoVoucher);
-                datos.ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
+
         public void agregar(Vouchers nuevo)
         {
             AccesoDatos datos = new AccesoDatos();

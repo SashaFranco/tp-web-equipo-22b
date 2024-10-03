@@ -73,6 +73,7 @@
     <Content Include="Formulario.aspx" />
     <Content Include="Global.asax" />
     <Content Include="css\Style.css" />
+    <Content Include="partExitosa.aspx" />
     <Content Include="Web.config" />
     <Content Include="CanjearCodigo.aspx" />
   </ItemGroup>
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="partExitosa.aspx.cs">
+      <DependentUpon>partExitosa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="partExitosa.aspx.designer.cs">
+      <DependentUpon>partExitosa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MasterPage.Master.cs">
