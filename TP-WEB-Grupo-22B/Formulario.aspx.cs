@@ -95,12 +95,6 @@ namespace TP_WEB_Grupo_22B
 
             VoucherNegocio vnegocio = new VoucherNegocio();
             vnegocio.canjearVoucher(codigoVoucher, IdCliente, idArticulo);
-
-            // -------actividad opcional, enviar correo ------//
-            
-            //await EnviarCorreoSendGrid.EnviarCorreo(txtEmail.Text, txtNombre.Text, codigoVoucher);
-
-            // -------actividad opcional, enviar correo ------//
         }
 
         protected void txtDni_TextChanged(object sender, EventArgs e)
