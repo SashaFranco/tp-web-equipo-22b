@@ -11,7 +11,7 @@ namespace negocio
 {
     public class EnviarCorreoSendGrid
     {
-        private const string API_KEY = "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"; // esto sale de SendGrid
+        private const string API_KEY = "clave api"; // esto sale de SendGrid
 
         public static async Task EnviarCorreo(string emailDestino, string nombreCliente, string codigoVoucher)
         {
