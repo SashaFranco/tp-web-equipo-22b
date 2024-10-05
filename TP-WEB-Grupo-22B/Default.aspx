@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
-        <h1>Bienvenido, ingrese a la sección de voucher y gane!</h1>
+        <h1>Bienvenido, haga click en el boton "Ir a Voucher" o ingrese a la seccion "Canjear Codigo" para participar por premios!</h1>
         <img src="https://paytechlaw.com/wp-content/uploads/190414_Corona-Voucher_Artenauta.png" class="img-fluid my-3" alt="Promoción">
         <asp:Button href="CanjearCodigo.aspx" Text="Ir a Vouchers" ID ="btnVoucher" CssClass="btn btn-primary mt-3" OnClick="btnVoucher_Click" runat="server" />
     </div>

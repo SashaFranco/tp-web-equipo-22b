@@ -44,14 +44,14 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="CanjearCodigo.aspx">Canjear Codigo</a>
                             </li>
-                            <li class="nav-item">
+                            <%--<li class="nav-item">
                                 <a class="nav-link" href="ElegirPremio.aspx">Ver Premios</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Formulario.aspx">Formulario</a>
-                            </li>
+                            </li>--%>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Creditos</a>
+                                <a class="nav-link" href="Exito.aspx">Creditos</a>
                             </li>
                         </ul>
                     </div>

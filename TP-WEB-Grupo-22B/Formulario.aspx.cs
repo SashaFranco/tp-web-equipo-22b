@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;  // Carpeta que envia correos (actividad opcional)
 using dominio;
 using negocio;
 
@@ -15,8 +16,6 @@ namespace TP_WEB_Grupo_22B
         {
 
         }
-
-
         public void agregarCliente()
         {
             Cliente cliente = new Cliente();
@@ -47,8 +46,6 @@ namespace TP_WEB_Grupo_22B
 
             return false;
         }
-
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             int idArticulo = int.Parse(Request.QueryString["id"]);
@@ -60,7 +57,6 @@ namespace TP_WEB_Grupo_22B
                 mensajeError += "Debe cargar todos los campos para participar. ";
             }
 
-
             if(!(CheckTermCond.Checked)) 
                 {
                 mensajeError += "Debe aceptar los terminos y condiciones.";
@@ -71,8 +67,6 @@ namespace TP_WEB_Grupo_22B
                 Response.Write("<script>alert('" + mensajeError + "');</script>");
                 return;
             }
-
-            
 
             string dni = txtDni.Text;
             ClienteNegocio auxNegocio = new ClienteNegocio();
@@ -102,7 +96,11 @@ namespace TP_WEB_Grupo_22B
             VoucherNegocio vnegocio = new VoucherNegocio();
             vnegocio.canjearVoucher(codigoVoucher, IdCliente, idArticulo);
 
-            Response.Redirect("partExitosa.aspx");
+            // -------actividad opcional, enviar correo ------//
+            
+            //await EnviarCorreoSendGrid.EnviarCorreo(txtEmail.Text, txtNombre.Text, codigoVoucher);
+
+            // -------actividad opcional, enviar correo ------//
         }
 
         protected void txtDni_TextChanged(object sender, EventArgs e)

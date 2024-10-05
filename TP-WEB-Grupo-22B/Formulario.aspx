@@ -68,9 +68,7 @@
                 </div>
                 <asp:Button ID="btnParticipar" OnClick="Button1_Click" CssClass="btn btn-primary" runat="server" Text="Participar!" />
 
-
             </div>
-
 
             <div class="col-2"></div>
         </div>
