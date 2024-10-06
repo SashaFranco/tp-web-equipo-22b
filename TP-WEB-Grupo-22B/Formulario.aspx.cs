@@ -14,7 +14,7 @@ namespace TP_WEB_Grupo_22B
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         public void agregarCliente()
         {
@@ -95,6 +95,8 @@ namespace TP_WEB_Grupo_22B
 
             VoucherNegocio vnegocio = new VoucherNegocio();
             vnegocio.canjearVoucher(codigoVoucher, IdCliente, idArticulo);
+
+            Response.Redirect("partExitosa.aspx");
         }
 
         protected void txtDni_TextChanged(object sender, EventArgs e)

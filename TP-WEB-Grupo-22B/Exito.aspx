@@ -31,7 +31,7 @@
         <div class="author-info">
             <h3>Jorge Samuel Villalba, legajo: 26184</h3>
             <p>
-                <a href="https://github.com/SamuelVillalba7" target="_blank">Link de GitHub de Jorge</a>
+                <a href="https://github.com/SamuelVillalba7" target="_blank">Link de GitHub de Samuel</a>
             </p>
         </div>
 
